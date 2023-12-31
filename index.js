@@ -70,7 +70,8 @@ app.post("/posts",(req,res)=>{
  app.patch("/posts/:id",(req,res)=>{
   const post = posts.find((p) => p.id === parseInt(req.params.id));
   if (!post) return res.status(404).json({ message: "Post not found" });
-
+  console.log("lets' check content");
+  console.log(req.body);
   if (req.body.title) post.title = req.body.title;
   if (req.body.content) post.content = req.body.content;
   if (req.body.author) post.author = req.body.author;

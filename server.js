@@ -61,8 +61,7 @@ app.post("/api/posts/:id", async (req, res) => {
       `${API_URL}/posts/${req.params.id}`,
       req.body
     );
-    console.log("lsdjglahsd;fsdjfdghsld;f");
-    console.log(response.data);
+    
     res.redirect("/");
   } catch (error) {
     res.status(500).json({ message: "Error updating post" });
